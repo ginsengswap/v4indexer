@@ -1,3 +1,5 @@
+Interface Example
+
 # Uniswap v4 Indexer
 
 A public Uniswap v4 indexer built with [Envio](https://envio.dev) that can be used by any developer to power their infrastructure.
