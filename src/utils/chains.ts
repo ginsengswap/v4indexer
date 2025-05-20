@@ -14,6 +14,7 @@ export enum ChainId {
   WORLD = 59144,
   UNICHAIN = 130,
   SONEIUM = 1868,
+  UNICHAIN_TESTNET = 1301,
 }
 
 // Native token details interface
@@ -374,6 +375,38 @@ export const CHAIN_CONFIGS: { [chainId: number]: ChainConfig } = {
       name: "Ethereum",
       decimals: 18n,
     },
+  },
+  [ChainId.UNICHAIN_TESTNET]: {
+    poolManagerAddress: "0x00b036b58a818b1bc34d502d3fe730db729e62ac",
+    stablecoinWrappedNativePoolId: "0x8ce630d9d616a8b9d3ad77ed99868ceb6bbab09afdc5b3c38f9068beb3101d18",
+    stablecoinIsToken0: false,
+    wrappedNativeAddress: "0x0000000000000000000000000000000000000000", // Native ETH
+    minimumNativeLocked: new BigDecimal("1"),
+    stablecoinAddresses: ["0x31d0220469e10c4E71834a79b1f276d740d3768F"], // USDC
+    whitelistTokens: [
+      "0x0000000000000000000000000000000000000000", // Native ETH
+      "0x31d0220469e10c4E71834a79b1f276d740d3768F"  // USDC
+    ],
+    tokenOverrides: [
+      {
+        address: "0x0000000000000000000000000000000000000000",
+        symbol: "ETH",
+        name: "Ethereum",
+        decimals: BigInt(18)
+      },
+      {
+        address: "0x31d0220469e10c4E71834a79b1f276d740d3768F",
+        symbol: "USDC",
+        name: "USD Coin",
+        decimals: BigInt(6)
+      }
+    ],
+    poolsToSkip: [],
+    nativeTokenDetails: {
+      symbol: "ETH",
+      name: "Ethereum",
+      decimals: BigInt(18)
+    }
   },
 };
 
