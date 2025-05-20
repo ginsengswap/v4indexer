@@ -88,6 +88,8 @@ const getRpcUrl = (chainId: number): string => {
       return process.env.UNICHAIN_RPC_URL || "https://unichain.drpc.org";
     case 57073:
       return process.env.INK_RPC_URL || "https://ink.drpc.org";
+    case 1301:
+      return process.env.UNICHAIN_TESTNET_RPC_URL || "https://unichain-sepolia.hypersync.xyz";
     // Add generic fallback for any chain
     default:
       throw new Error(`No RPC URL configured for chainId ${chainId}`);
